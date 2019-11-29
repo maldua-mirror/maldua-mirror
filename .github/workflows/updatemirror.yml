@@ -12,8 +12,7 @@ jobs:
 
     steps:
     - name: Fetch zm-build
-      run: rm -rf tmp-repo
-           mkdir tmp-repo
+      run: mkdir tmp-repo
            cd tmp-repo
            git clone --mirror git@github.com:Zimbra/zm-build.git
            cd zm-build

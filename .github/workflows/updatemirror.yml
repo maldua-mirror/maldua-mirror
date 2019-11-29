@@ -21,4 +21,4 @@ jobs:
            git remote add malduamirror https://x-access-token:$GITHUB_TOKEN@github.com/maldua-mirror/zm-build.git
            git push --mirror malduamirror
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.MALDUAMIRROR_TOKEN }}

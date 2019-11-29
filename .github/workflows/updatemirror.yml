@@ -16,7 +16,7 @@ jobs:
            mkdir tmp-repo
            cd tmp-repo
            git config --global user.name "Maldua-mirror via GitHub Actions"
-           git clone --bare git@github.com:Zimbra/zm-build.git
+           git clone --bare https://github.com/Zimbra/zm-build.git
            cd zm-build.git
            git remote add malduamirror https://x-access-token:$GITHUB_TOKEN@github.com/maldua-mirror/zm-build.git
            git push --mirror malduamirror

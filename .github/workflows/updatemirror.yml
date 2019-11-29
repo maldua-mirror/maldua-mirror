@@ -1,9 +1,11 @@
-name: CI
+name: MirrorThemAll
 
 on:
   push:
     branches:
-    - update-mirror
+    - master
+  schedule:
+    - cron:  '30 5 * * *'
 
 jobs:
   build:

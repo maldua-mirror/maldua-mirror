@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - update-mirror
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Fetch zm-build
+      run: rm -rf tmp-repo
+           mkdir tmp-repo
+           cd tmp-repo
+           git clone --mirror git@github.com:Zimbra/zm-build.git
+           cd zm-build
+           git remote add malduamirror git@github.com:maldua-mirror/zm-build.git
+           git push --mirror malduamirror

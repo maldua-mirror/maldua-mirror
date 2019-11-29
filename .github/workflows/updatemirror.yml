@@ -15,6 +15,6 @@ jobs:
       run: mkdir tmp-repo
            cd tmp-repo
            git clone --mirror git@github.com:Zimbra/zm-build.git
-           cd zm-build
+           cd zm-build.git
            git remote add malduamirror git@github.com:maldua-mirror/zm-build.git
            git push --mirror malduamirror

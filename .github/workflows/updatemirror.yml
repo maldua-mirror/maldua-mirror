@@ -15,7 +15,11 @@ jobs:
     steps:
     - name: Fetch and push zm-build
       run: |
-           ZIMBRA_REPOS="zm-build zm-zcs-lib"
+           ZIMBRA_REPOS="\
+           zm-build \
+           zm-zcs-lib \
+           adminguide \
+           "
            mkdir tmp-repo
            cd tmp-repo
            for nrepo in ${ZIMBRA_REPOS}; do

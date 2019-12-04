@@ -19,8 +19,6 @@ We create a new Personal Access Token associated with maldua-mirrorer user.
 
 Scopes to be selected for this PAT are:
 * repo
-* admin:org
-
 
 We write it down because we will need it later.
 
@@ -40,5 +38,6 @@ for nrepo in $(cat zimbra-repos-ordered.txt); do
     -u maldura-mirrorer:${GITHUB_TOKEN} \
     -d '{"organization":"maldua-mirror"}' \
     -X POST https://api.github.com/repos/Zimbra/${nrepo}/forks
+  sleep 5s
 done
 ```

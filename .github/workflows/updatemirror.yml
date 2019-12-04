@@ -5,7 +5,7 @@ on:
     branches:
     - master
   schedule:
-    - cron:  '30 5 * * *'
+    - cron:  '36 16 * * *'
 
 jobs:
   build:
@@ -15,12 +15,15 @@ jobs:
     steps:
     - name: Fetch and push zm-build
       run: |
-           mkdir tmp-repo
-           cd tmp-repo
-           git config --global user.name "Maldua-mirror via GitHub Actions"
-           git clone --bare https://github.com/Zimbra/zm-build.git
-           cd zm-build.git
-           git remote add malduamirror https://x-access-token:$GITHUB_TOKEN@github.com/maldua-mirror/zm-build.git
-           git push --mirror malduamirror
+           ZIMBRA_REPOS="zm-build zm-zcs-lib"
+           for nrepo in ${ZIMBRA_REPOS}; do
+             mkdir tmp-repo
+             cd tmp-repo
+             git config --global user.name "Maldua-mirror via GitHub Actions"
+             git clone --bare https://github.com/Zimbra/${nrepo}.git
+             cd zm-build.git
+             git remote add malduamirror https://x-access-token:$GITHUB_TOKEN@github.com/maldua-mirror/${nrepo}.git
+             git push --mirror malduamirror
+           done
       env:
         GITHUB_TOKEN: ${{ secrets.MALDUAMIRROR_TOKEN }}

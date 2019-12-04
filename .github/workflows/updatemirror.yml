@@ -1,7 +1,6 @@
 name: MirrorThemAll
 
 on:
-  push:
   schedule:
     - cron:  '30 05 * * *'
 

@@ -1,5 +1,5 @@
 # maldua-mirror
-Maldua main mirror script
+TODO: What is maldua-mirror?
 
 # How to add a new mirror
 

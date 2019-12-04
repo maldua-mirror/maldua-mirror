@@ -42,3 +42,6 @@ for nrepo in $(cat zimbra-repos-ordered.txt); do
   sleep 5s
 done
 ```
+
+# Remove Personal Access Token
+You might want to remove the Personal Access Token if you are not going to fork any more projects in a massive way.

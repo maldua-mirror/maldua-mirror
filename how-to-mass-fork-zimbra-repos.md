@@ -37,7 +37,8 @@ for nrepo in $(cat zimbra-repos-ordered.txt); do
   curl \
     -u maldura-mirrorer:${GITHUB_TOKEN} \
     -d '{"organization":"maldua-mirror"}' \
-    -X POST https://api.github.com/repos/Zimbra/${nrepo}/forks
+    -X POST https://api.github.com/repos/Zimbra/${nrepo}/forks \
+    > fork-request-log-${nrepo}.txt 2>&1
   sleep 5s
 done
 ```

@@ -81,7 +81,6 @@ jobs:
            zm-gql \
            zm-help \
            zm-helptooltip-zimlet \
-           zm-infrastructure \
            zm-jetty-conf \
            zm-jython \
            zm-launcher \

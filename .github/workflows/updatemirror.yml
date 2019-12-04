@@ -16,14 +16,15 @@ jobs:
     - name: Fetch and push zm-build
       run: |
            ZIMBRA_REPOS="zm-build zm-zcs-lib"
+           mkdir tmp-repo
+           cd tmp-repo
            for nrepo in ${ZIMBRA_REPOS}; do
-             mkdir tmp-repo
-             cd tmp-repo
              git config --global user.name "Maldua-mirror via GitHub Actions"
              git clone --bare https://github.com/Zimbra/${nrepo}.git
-             cd zm-build.git
+             cd ${nrepo}.git
              git remote add malduamirror https://x-access-token:$GITHUB_TOKEN@github.com/maldua-mirror/${nrepo}.git
              git push --mirror malduamirror
+             cd ..
            done
       env:
         GITHUB_TOKEN: ${{ secrets.MALDUAMIRROR_TOKEN }}
